@@ -14,13 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Set up Lean, Lake, and Mathlib (if needed)
-      # The 'cache-deps' part makes future runs much faster
+      # Step 2: Set up Lean and cache dependencies
       - name: Install Lean
         uses: leanprover/lean-action@v1
         with:
-          cache-deps: true
+          # This is the updated line
+          use-github-cache: true
 
-      # Step 3 (CRITICAL): Build the project and check proofs
+      # Step 3: Build the project and check proofs
       - name: Build project
         run: lake build
