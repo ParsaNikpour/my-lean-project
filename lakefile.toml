@@ -3,7 +3,7 @@ version = "0.1.0"
 defaultTargets = ["my-lean-project"]
 
 [[lean_lib]]
-name = "MyLeanProject"
+name := "my_lean_project"
 
 [[lean_exe]]
 name = "my-lean-project"
